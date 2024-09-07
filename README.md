@@ -99,4 +99,50 @@ And you can find answer in Index Entry Size: 4096
 
 
 <h3>3.Recovering deleted files</h3>
+First what we need to do is nagivate on Desktop you will there a icon Autopsy, just clik it :P
+Click on New Case:
 
+![image](https://github.com/user-attachments/assets/fd4f1434-715c-47f7-9667-7a6cf20b9e54)
+
+Enter a name to save your case by, and click Next.
+You can add the required details here. For now, we can click Finish to move forward. Autopsy will perform some processing and then show the following screen. Click Next to move forward.
+You will see this screen. Since we will be performing analysis on a disk image, select the topmost option, Disk Image or VM File.
+Provide the location of the data source. You will find a disk image named 'usb.001' on the Desktop. Provide the path to that file in the above window and click next. You will see the following window:
+click Deselect All. These are different modules that Autopsy runs on the data for processing. For this task, we don't need any of these. If enabled, they take a lot of time to run. Click Next after clicking Deselect All. Autopsy will load the disk image. You will see the following in the left panel.
+
+Then navigate to Deleted Files\File System 
+
+![image](https://github.com/user-attachments/assets/4ef3eacc-59c7-43ed-8052-c1cbb5613087)
+
+Task 1:There is another xlsx file that was deleted. What is the full name of that file?
+Tryhackme.xlsx
+
+Task 2:What is the name of the TXT file that was deleted from the disk?
+TryHackMe2.txt
+
+Task 3:Recover the TXT file from Question #2. What was written in this txt file?
+Click on the TryHackMe2.txt then Extract Files to Desktop
+
+![image](https://github.com/user-attachments/assets/517a9488-514c-42cf-918d-eaaf24d5ffc8)
+
+<h3>4.Evidence of Execution</h3>
+
+Task 1:How many times was gkape.exe executed?
+Open CMD as Administor, navigate to ```C:\users\THM-4n6\Desktop\EZtools``` then run that command ```PECmd.exe -d C:\Users\THM-4n6\Desktop\triage\C\Windows\prefetch --csv C:\Users\THM-4n6\Desktop```
+
+Then load that file into EZViewer
+
+![image](https://github.com/user-attachments/assets/567b29f3-e152-46f1-9db3-139cbc7fcee1)
+
+And the answer will be 2.
+
+Task 2:What is the last execution time of gkape.exe
+We need to run that command ```PECmd.exe -d C:\Users\THM-4n6\Desktop\triage\C\Windows\prefetch --csv C:\Users\THM-4n6\DesktopWxTCmd.exe C:\Users\THM-4n6\Desktop\triage\C\Users\THM-4n6\AppData\Local\ConnectedDevicesPlatform\L.THM-4n6\ActivitiesCache.db --csv C:\Users\THM-4n6\Desktop```
+
+And do what's we did in previouse task, navigate to EZViewver and load that file
+The answer will be: What is the last execution time of gkape.exe
+
+Task 3:When Notepad.exe was opened on 11/30/2021 at 10:56, how long did it remain in focus?
+```WxTCmd.exe -f C:\Users\THM-4n6\Desktop\triage\C\Users\THM-4n6\AppData\Local\ConnectedDevicesPlatform\L.THM-4n6\ActivitiesCache.db — csv C:\Users\THM-4n6\Desktop``` - we need to run that command and load into EZViewver, search by Notepad.exe and you will see duration: 00:00:41🕓
+
+![image](https://github.com/user-attachments/assets/0c25b7fb-047c-4806-88be-cf93a7aa484f)
