@@ -146,3 +146,29 @@ Task 3:When Notepad.exe was opened on 11/30/2021 at 10:56, how long did it remai
 ```WxTCmd.exe -f C:\Users\THM-4n6\Desktop\triage\C\Users\THM-4n6\AppData\Local\ConnectedDevicesPlatform\L.THM-4n6\ActivitiesCache.db — csv C:\Users\THM-4n6\Desktop``` - we need to run that command and load into EZViewver, search by Notepad.exe and you will see duration: 00:00:41🕓
 
 ![image](https://github.com/user-attachments/assets/0c25b7fb-047c-4806-88be-cf93a7aa484f)
+
+Task 4:What program was used to open C:\Users\THM-4n6\Desktop\KAPE\KAPE\ChangeLog.txt?
+```JLECmd.exe -f C:\Users\THM-4n6\Desktop\triage\C\Users\THM-4n6\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations --csv C:\Users\THM-4n6\Desktop\2```
+
+And again did what's you did in previouse task, load it :)
+The answer is: Notepad.exe
+
+<h3>5.File/folder knowledge</h3>
+
+Task 1:When was the folder C:\Users\THM-4n6\Desktop\regripper last opened?
+```LECmd.exe -d C:\Users\THM-4n6\Desktop\triage\C\Users\THM-4n6\AppData\Roaming\Microsoft\Windows\Recent\ --csv C:\Users\THM-4n6\Desktop```
+
+Made the same step what's in previouse task. The answe is: 12/1/2021 13:01
+
+Task 2:When was the above-mentioned folder first opened?
+You can also find the answer in the same example, check screanshot below:12/1/2021 12:31
+
+![image](https://github.com/user-attachments/assets/ad6887e0-247b-4ae1-a75a-1abfae53bde2)
+
+
+<h3>6.External Devices/USB device forensics</h3>
+
+Task 1:Which artifact will tell us the first and last connection times of a removable drive?
+When any new device is attached to a system, information related to the setup of that device is stored in the setupapi.dev.log 
+
+And that's it, thank you! 
