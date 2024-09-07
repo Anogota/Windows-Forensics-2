@@ -73,9 +73,30 @@ You can then use the EZviewer tool inside the EZtools folder to view the output 
 
 Task 1:Parse the $MFT file placed in C:\users\THM-4n6\Desktop\triage\C\ and analyze it. What is the Size of the file located at .\Windows\Security\logs\SceSetupLog.etl
 
-I used that command: ```MFTECmd.exe -f C:\users\THM-4n6\Desktop\triage\C\$MFT --csv C:\Users\THM-4n6\Desktop``` that fill .csv will save on our Desktop
+I used that command: ```MFTECmd.exe -f C:\users\THM-4n6\Desktop\triage\C\$MFT --csv C:\Users\THM-4n6\Desktop``` that fill .csv will save on our Desktop, if everything its okay you should see that:
+CSV output will be saved to 'C:\Users\THM-4n6\Desktop\20240907114013_MFTECmd_$MFT_Output.csv'
+
+Navigate on Desktop to EZtools\EZviewer and then run that program EZviewer, than open that csv in program. and you will see something what's look like this:
+
+![image](https://github.com/user-attachments/assets/49089639-77ec-4620-9837-97b6f5ec097d)
+
+Task 1:Parse the $MFT file placed in C:\users\THM-4n6\Desktop\triage\C\ and analyze it. What is the Size of the file located at .\Windows\Security\logs\SceSetupLog.etl
+Press CTRL+F and search SceSetupLog.etl you should see this: 
+
+![image](https://github.com/user-attachments/assets/792edd7d-4a96-48ee-8d51-83e84ae42592)
+
+The answer is: 49152
+
+Task 2:What is the size of the cluster for the volume from which this triage was taken?
+I checked the hint, because i had no idea what should i do :D
+Hint: Parse the $Boot file. If you are having trouble viewing the CSV file, you can use EZviewer from the EZtools folder
+
+So i parse the $Boot, like in previouse example.
+
+![image](https://github.com/user-attachments/assets/5f3b1592-b201-429c-9e35-b49432764399)
+
+And you can find answer in Index Entry Size: 4096
 
 
-
-
+<h3>3.Recovering deleted files</h3>
 
